@@ -45,12 +45,12 @@ export function ContractPreview() {
             <mark className="clause-mark bg-highlight-high">Invoices are payable Net 90.</mark>
           </p>
 
-          <Bars widths={["100%", "88%", "40%"]} />
+          <Bars widths={["100%", "88%", "94%", "60%"]} />
         </div>
       </div>
 
       {/* The finding */}
-      <figcaption className="relative -mt-6 ml-6 mr-2 rounded-lg border border-l-4 border-l-risk-high bg-card p-5 shadow-float sm:ml-12 lg:absolute lg:right-0 lg:bottom-10 lg:m-0 lg:w-72">
+      <figcaption className="relative -mt-6 ml-6 mr-2 rounded-lg border border-l-4 border-l-risk-high bg-card p-5 shadow-float sm:ml-12 lg:absolute lg:right-0 lg:-bottom-10 lg:m-0 lg:w-72">
         <p className="font-display text-sm font-semibold leading-snug text-card-foreground">
           Long / unfavorable payment terms (High)
         </p>

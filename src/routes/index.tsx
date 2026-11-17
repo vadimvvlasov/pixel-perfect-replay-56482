@@ -97,11 +97,14 @@ function SiteHeader() {
   return (
     <header className="border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75 sticky top-0 z-20">
       <div className="page-container flex h-16 items-center justify-between gap-3">
-        <a href="/" className="flex items-center gap-2 font-display text-base font-semibold tracking-tight">
-          <span aria-hidden="true" className="amber-rule w-3 h-3 rounded-sm" />
+        <a
+          href="/"
+          className="flex items-center gap-2 font-display text-[0.95rem] font-semibold tracking-tight whitespace-nowrap sm:text-base"
+        >
+          <span aria-hidden="true" className="amber-rule hidden size-3 rounded-sm sm:inline-block" />
           Anti-Scope Creep
         </a>
-        <nav aria-label="Main" className="flex items-center gap-1 sm:gap-2">
+        <nav aria-label="Main" className="flex shrink-0 items-center gap-0.5 sm:gap-2">
           <a
             href={LINKS.sample}
             className="hidden rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground md:inline-block"
@@ -110,11 +113,11 @@ function SiteHeader() {
           </a>
           <a
             href={LINKS.login}
-            className="rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground sm:px-3"
+            className="rounded-md px-2 py-2 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground sm:px-3"
           >
             Log in
           </a>
-          <Button asChild size="sm" className="px-3 sm:h-9 sm:px-4 sm:text-sm">
+          <Button asChild size="sm" className="px-2.5 sm:h-9 sm:px-4 sm:text-sm">
             <a href={LINKS.register}>Create a free account</a>
           </Button>
         </nav>
