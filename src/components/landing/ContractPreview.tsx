@@ -90,7 +90,7 @@ export function ContractPreview() {
     }
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setPlaying(true);
           io.disconnect();
         }
