@@ -1,5 +1,3 @@
-import { Badge } from "@/components/ui/badge";
-
 function Bars({ widths }: { widths: string[] }) {
   return (
     <span aria-hidden="true" className="flex flex-col gap-2.5">
@@ -53,11 +51,7 @@ export function ContractPreview() {
 
       {/* The finding */}
       <figcaption className="relative -mt-6 ml-6 mr-2 rounded-lg border border-l-4 border-l-risk-high bg-card p-5 shadow-float sm:ml-12 lg:absolute lg:right-0 lg:bottom-10 lg:m-0 lg:w-72">
-        <div className="flex items-center gap-2">
-          <span aria-hidden="true" className="size-2 rounded-full bg-risk-high" />
-          <Badge variant="high">High</Badge>
-        </div>
-        <p className="mt-3 font-display text-sm font-semibold leading-snug text-card-foreground">
+        <p className="font-display text-sm font-semibold leading-snug text-card-foreground">
           Long / unfavorable payment terms (High)
         </p>
         <blockquote className="mt-3 border-l-2 pl-3 text-sm text-muted-foreground italic">
