@@ -255,12 +255,93 @@
   background-color: var(--color-paper-line);
 }
 
-/* Highlighted clause inside the illustrated contract */
+/* Highlighted clause inside the illustrated contract.
+ * The highlight is a background image so it can sweep in left to right. */
 @utility clause-mark {
   color: var(--color-foreground);
   padding: 0.1em 0.2em;
   margin-inline: -0.2em;
   border-radius: 0.2em;
+  background-image: linear-gradient(var(--clause-bg), var(--clause-bg));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: transparent;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+
+@utility clause-high {
+  --clause-bg: var(--color-highlight-high);
+}
+
+@utility clause-medium {
+  --clause-bg: var(--color-highlight-medium);
+}
+
+/* Hero review sequence: scan line, clause highlights, finding cards.
+ * Each element reads its start time from --delay (set inline). */
+@keyframes review-scan {
+  0% { top: 0%; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes clause-sweep {
+  from { background-size: 0% 100%; }
+  to { background-size: 100% 100%; }
+}
+
+@keyframes finding-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes finding-dot {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--dot-color) 55%, transparent); }
+  100% { box-shadow: 0 0 0 8px color-mix(in oklab, var(--dot-color) 0%, transparent); }
+}
+
+@utility review-scan-line {
+  position: absolute;
+  left: -0.5rem;
+  right: -0.5rem;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 12px 2px color-mix(in oklab, var(--color-accent) 45%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: review-scan 2.6s cubic-bezier(0.45, 0, 0.55, 1) var(--delay, 0s) both;
+}
+
+@utility animate-clause {
+  animation: clause-sweep 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) both;
+}
+
+@utility animate-finding {
+  animation: finding-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) both;
+}
+
+@utility animate-finding-dot {
+  animation: finding-dot 1.2s ease-out var(--delay, 0s) 2 both;
+}
+
+/* Sequence waits (first frame shown) until the picture scrolls into view */
+.review-idle .review-scan-line,
+.review-idle .animate-clause,
+.review-idle .animate-finding,
+.review-idle .animate-finding-dot {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-scan-line {
+    display: none;
+  }
+  .animate-clause,
+  .animate-finding,
+  .animate-finding-dot {
+    animation: none;
+  }
 }
