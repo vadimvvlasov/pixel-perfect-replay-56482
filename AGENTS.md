@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The landing page is static (no backend, auth, forms or database); its links are plain `<a>` tags to paths served by the separate app, so do not add route files for them.
+- Light and dark themes are both defined in `src/styles.css`; dark applies via the system setting or a `.dark` class, with no toggle.
