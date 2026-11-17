@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -78,9 +78,33 @@ function FindingCard({
  * each risky clause is highlighted in turn and its finding card appears. Pure HTML/CSS.
  */
 export function ContractPreview() {
+  // Hold the sequence until the picture is on screen (on phones it starts below the fold).
+  const ref = useRef<HTMLElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setPlaying(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPlaying(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.45 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <figure
-      className="relative mx-auto w-full max-w-md lg:max-w-none"
+      ref={ref}
+      className={cn("relative mx-auto w-full max-w-md lg:max-w-none", !playing && "review-idle")}
       aria-label="Illustration: a contract excerpt where two clauses are flagged, a medium-risk scope clause and a high-risk payment clause, each with its finding"
     >
       {/* The document */}

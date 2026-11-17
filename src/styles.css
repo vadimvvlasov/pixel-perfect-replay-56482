@@ -327,6 +327,14 @@
   animation: finding-dot 1.2s ease-out var(--delay, 0s) 2 both;
 }
 
+/* Sequence waits (first frame shown) until the picture scrolls into view */
+.review-idle .review-scan-line,
+.review-idle .animate-clause,
+.review-idle .animate-finding,
+.review-idle .animate-finding-dot {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .review-scan-line {
     display: none;
