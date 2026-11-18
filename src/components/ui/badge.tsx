@@ -16,7 +16,8 @@ const badgeVariants = cva(
         outline: "text-foreground",
         high: "border-risk-high/40 bg-highlight-high text-foreground",
         medium: "border-risk-medium/40 bg-highlight-medium text-foreground",
-        low: "border-risk-low/40 bg-muted text-foreground",
+        low: "border-risk-low/40 bg-highlight-low text-foreground",
+        sample: "border-brand/30 bg-brand-soft text-accent-foreground font-medium",
       },
     },
     defaultVariants: {
