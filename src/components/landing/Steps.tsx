@@ -4,10 +4,10 @@ import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 const STEPS = [
-  { title: "Upload your contract.", body: "Upload a PDF or paste contract text.", Icon: Upload },
+  { title: "Upload your contract.", body: "Upload a PDF or paste the text of an English contract.", Icon: Upload },
   {
     title: "AI reviews the terms.",
-    body: "The system identifies potential risks and verifies quotations against the original contract.",
+    body: "Takes a few minutes. The AI finds potential risks and checks every quotation against your contract.",
     Icon: ScanSearch,
   },
   {

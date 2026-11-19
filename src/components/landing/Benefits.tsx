@@ -62,7 +62,7 @@ const BENEFITS = [
   },
   {
     title: "Better wording to propose.",
-    body: "Get practical alternative clauses that help negotiate fairer terms.",
+    body: "For each risky clause, replacement wording you can offer your client, in a PDF or DOCX report.",
     Visual: WordingVisual,
   },
   {
