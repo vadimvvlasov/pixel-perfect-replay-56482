@@ -52,8 +52,8 @@ function Index() {
 
 function Hero() {
   return (
-    <section aria-labelledby="hero-heading" className="page-container pt-10 pb-24 sm:pt-16 lg:pt-20 lg:pb-32">
-      <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
+    <section aria-labelledby="hero-heading" className="page-container pt-10 pb-24 sm:pt-16 md:pt-12 lg:pt-20 lg:pb-32">
+      <div className="grid items-center gap-14 md:grid-cols-2 md:items-start md:gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
         <div className="animate-in fade-in slide-in-from-bottom-2 duration-700">
           <p className="flex items-start gap-3 text-sm text-muted-foreground">
             <span aria-hidden="true" className="brand-rule mt-2.5 shrink-0" />
@@ -61,15 +61,15 @@ function Hero() {
           </p>
           <h1
             id="hero-heading"
-            className="mt-5 text-[2.5rem] leading-[1.05] font-semibold sm:text-5xl lg:text-[3.6rem]"
+            className="mt-5 text-[2.5rem] leading-[1.05] font-semibold sm:text-5xl md:text-[2.6rem] lg:text-[3.6rem]"
           >
             Know what you're agreeing to before you sign.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-base lg:text-lg">
             AI-powered contract review for freelancers. Spot scope creep, payment traps and unfair terms
             before they cost you money.
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-start">
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start md:mt-7 lg:mt-9">
             <div className="flex flex-col gap-2">
               <Button asChild size="xl" className="w-full sm:w-auto">
                 <a href={LINKS.sample}>Try a free sample</a>

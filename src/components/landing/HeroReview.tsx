@@ -103,13 +103,17 @@ export function HeroReview() {
               </mark>
             </p>
 
-            <Bars widths={["100%", "90%", "96%", "62%", "84%", "92%", "70%", "88%", "40%"]} />
+            {/* Short tail on smaller screens so the findings stay in the first view */}
+            <Bars widths={["100%", "90%", "62%"]} />
+            <span aria-hidden="true" className="hidden lg:-mt-2.5 lg:block">
+              <Bars widths={["96%", "84%", "92%", "70%", "88%", "40%"]} />
+            </span>
           </div>
         </div>
       </div>
 
       {/* Findings: stacked under the page on small screens, pinned to its edge on desktop */}
-      <div className="relative -mt-8 ml-5 mr-1 flex flex-col gap-3 sm:ml-10 lg:static lg:m-0">
+      <div className="relative -mt-8 ml-5 mr-1 flex flex-col gap-3 sm:ml-10 md:ml-5 lg:static lg:m-0">
         <div
           className={cn(
             "animate-finding rounded-lg border border-l-4 bg-card px-4 py-3 shadow-float lg:absolute lg:top-[4.5rem] lg:right-0 lg:w-72",

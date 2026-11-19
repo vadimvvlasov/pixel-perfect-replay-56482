@@ -1,4 +1,4 @@
-import { Check, Copy, FileText, Mail } from "lucide-react";
+import { ArrowRight, Check, Copy, FileText, Mail } from "lucide-react";
 import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -45,18 +45,12 @@ export function ProductDemo() {
   return (
     <section id="sample" aria-labelledby="sample-heading" className="scroll-mt-20 border-t">
       <div className="page-container py-20 sm:py-28">
-        <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <Reveal>
           <SectionHeading
             id="sample-heading"
             eyebrow="Sample analysis"
             title="Every finding, with the fix next to it."
           />
-          <a
-            href={LINKS.sample}
-            className="text-sm font-medium text-brand underline-offset-4 hover:underline"
-          >
-            Open the full sample analysis
-          </a>
         </Reveal>
 
         <Reveal className="mt-10" delay={80}>
@@ -222,6 +216,16 @@ export function ProductDemo() {
           <p className="mt-4 text-sm text-muted-foreground">
             Illustrative example. Names in brackets show where party details are replaced with placeholders.
           </p>
+          {/* The main next step for a new visitor: the full sample opens without an account */}
+          <div className="mt-10 flex flex-col items-center gap-2 text-center">
+            <Button asChild size="xl" className="group w-full sm:w-auto">
+              <a href={LINKS.sample}>
+                Open the full sample analysis
+                <ArrowRight aria-hidden="true" className="transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </Button>
+            <span className="text-xs text-muted-foreground">No account needed</span>
+          </div>
         </Reveal>
       </div>
     </section>
