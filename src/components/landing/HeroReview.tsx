@@ -93,7 +93,7 @@ export function HeroReview() {
               </mark>
             </p>
 
-            <Bars widths={["94%", "70%"]} />
+            <Bars widths={["70%"]} />
 
             <p className="text-card-foreground">
               <span className="font-semibold">2. Payment.</span>{" "}
@@ -103,7 +103,7 @@ export function HeroReview() {
               </mark>
             </p>
 
-            <Bars widths={["100%", "90%", "96%", "62%", "84%", "40%"]} />
+            <Bars widths={["100%", "90%", "96%", "62%", "84%", "92%", "70%", "88%", "40%"]} />
           </div>
         </div>
       </div>
@@ -112,7 +112,7 @@ export function HeroReview() {
       <div className="relative -mt-8 ml-5 mr-1 flex flex-col gap-3 sm:ml-10 lg:static lg:m-0">
         <div
           className={cn(
-            "animate-finding rounded-lg border border-l-4 bg-card px-4 py-3 shadow-float lg:absolute lg:top-24 lg:right-0 lg:w-72",
+            "animate-finding rounded-lg border border-l-4 bg-card px-4 py-3 shadow-float lg:absolute lg:top-[4.5rem] lg:right-0 lg:w-72",
             riskBorder(scope.level),
           )}
           style={delay(T.mediumCard)}
@@ -123,7 +123,7 @@ export function HeroReview() {
 
         <div
           className={cn(
-            "animate-finding rounded-lg border border-l-4 bg-card p-4 shadow-float sm:p-5 lg:absolute lg:right-0 lg:-bottom-14 lg:w-80",
+            "animate-finding rounded-lg border border-l-4 bg-card p-4 shadow-float sm:p-5 lg:absolute lg:right-0 lg:-bottom-16 lg:w-80",
             riskBorder(payment.level),
           )}
           style={delay(T.highCard)}

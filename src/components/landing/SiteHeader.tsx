@@ -29,7 +29,7 @@ export function SiteHeader() {
       <div className="page-container flex h-16 items-center justify-between gap-3">
         <a
           href="/"
-          className="flex items-center gap-2.5 font-display text-[0.95rem] font-semibold tracking-tight whitespace-nowrap sm:text-base"
+          className="flex min-w-0 items-center gap-2 font-display text-[0.9rem] font-semibold sm:gap-2.5 tracking-tight whitespace-nowrap sm:text-base"
         >
           <LogoMark className="h-6 w-5 shrink-0" />
           Anti-Scope Creep
@@ -50,11 +50,11 @@ export function SiteHeader() {
           </ul>
           <a
             href={LINKS.login}
-            className="rounded-md px-2 py-2 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground sm:px-3"
+            className="rounded-md px-1.5 py-2 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground sm:px-3"
           >
             Log in
           </a>
-          <Button asChild size="sm" className="h-9 px-3 sm:px-4 sm:text-sm">
+          <Button asChild size="sm" className="h-9 px-2.5 text-xs sm:px-4 sm:text-sm">
             <a href={LINKS.register}>Analyze my contract</a>
           </Button>
         </nav>

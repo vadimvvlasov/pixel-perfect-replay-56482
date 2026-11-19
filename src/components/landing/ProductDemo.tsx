@@ -127,7 +127,7 @@ export function ProductDemo() {
                               "clause-mark cursor-pointer transition-[box-shadow,opacity] duration-300",
                               riskClause(levelOf(r.finding)),
                               tab === "findings" && selected === r.finding
-                                ? "ring-2 ring-foreground/70"
+                                ? "shadow-[inset_0_-2px_0_0_currentColor]"
                                 : "opacity-70 hover:opacity-100",
                             )}
                           >

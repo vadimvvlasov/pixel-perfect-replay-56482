@@ -8,7 +8,7 @@ export function ClosingCta() {
     <section aria-labelledby="cta-heading" className="border-t">
       <div className="page-container py-20 sm:py-28">
         <Reveal>
-          <div className="ruled-paper relative overflow-hidden rounded-2xl border bg-card px-6 py-14 text-center shadow-paper sm:px-12 sm:py-20">
+          <div className="relative overflow-hidden rounded-2xl border bg-card px-6 py-14 text-center shadow-paper sm:px-12 sm:py-20">
             <h2 id="cta-heading" className="mx-auto max-w-2xl text-3xl leading-[1.1] font-semibold sm:text-5xl">
               Don't sign a contract you{" "}
               <mark className="clause-mark clause-medium">haven't checked.</mark>

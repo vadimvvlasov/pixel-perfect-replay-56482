@@ -398,17 +398,6 @@
   color: var(--color-muted-foreground);
 }
 
-/* Faint ruled-paper texture for large panels */
-@utility ruled-paper {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 31px,
-    color-mix(in oklab, var(--color-border) 70%, transparent) 31px,
-    color-mix(in oklab, var(--color-border) 70%, transparent) 32px
-  );
-}
-
 /* Scroll reveal: Reveal.tsx only adds data-reveal="hidden" to blocks that start off screen */
 [data-reveal] {
   transition:

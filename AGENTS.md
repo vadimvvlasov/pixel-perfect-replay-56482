@@ -33,3 +33,6 @@ use the editor.
 
 - The landing page is static (no backend, auth, forms or database); its links are plain `<a>` tags to paths served by the separate app, so do not add route files for them.
 - Light and dark themes are both defined in `src/styles.css`; dark applies via the system setting or a `.dark` class, with no toggle.
+- Landing sections live in `src/components/landing/` (one component per section) and `src/routes/index.tsx` only composes them, so each section can be edited on its own.
+- Demo content (sample contract, findings, email) lives only in `src/components/landing/sample-analysis.ts` and is illustrative; the real analysis stays in the main app behind the sample link.
+- Scroll reveals hide only blocks that start off screen after mount, so server HTML is always visible without JS.
